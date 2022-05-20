@@ -1,10 +1,18 @@
-describe '#square_array' do
+def square_array 
 
-  it 'does not call on collect/map or inject' do
+  #it 'does not call on collect/map or inject' do
     numbers = [1,2,3]
-    expect(numbers).to_not receive(:collect)
-    expect(numbers).to_not receive(:map)
-    expect(numbers).to_not receive(:inject)
+    numbers.each do |n|
+    
+    #expect(numbers).to_not receive(:collect)
+    puts "square_array by collect metnod is: #{numbers.collect {|n| n*n}}"
+
+    #expect(numbers).to_not receive(:map)
+    puts "square_array by map method is: #{numbers.map {|n| n*n}}"
+
+    #expect(numbers).to_not receive(:inject)
+    puts "square_array by inject is: # {numbers.inject(n)}{|result, n|result}*n}"
+
     square_array(numbers)
   end
 
@@ -20,3 +28,15 @@ describe '#square_array' do
   end
 
 end
+
+#def #sq
+square_array = [1, 2, 3]
+square_array.each do |n|
+  puts " Square numbers #{n} is #{n*n}"
+end
+#puts square_array.inspect
+puts "square_array by collect metnod is: #{square_array.collect {|n| n*n}}"
+puts "square_array by map method is: #{square_array.map {|n| n*n}}"
+puts "square_array by inject method is: #{square_array.inject(n){|result, n|result}*n}"
+puts square_array.inspect
+#end
